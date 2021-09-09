@@ -3,11 +3,44 @@
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 	<title>numnub</title>
+	<style>
+		body {margin:0;padding:0;font-family: monospace;}
+		#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px;
+		}
+		#image {
+		}
+		#text-left {
+			padding:15%;
+			background-color:#fff;
+			color:#000;
+		}
+		#text-right {
+			padding:15%;
+			background-color:#000;
+			color:#fff;
+		}
+		img {
+			height: 100%;
+			width: 100%;
+			/*object-fit: contain;*/
+		}
+	</style>
 
 </head>
 
 <body id="index" onload="">
-	<p>Hello from numnub.</p>
+	<div id="container">
+		<div id="text-left">Hello from numnub, again.</div>
+		<div id="image">
+			<img src="img/IMG_5320_bw.jpeg" alt="test image"/>
+		</div>
+		<div id="image">
+			<img src="img/IMG_5361_bw.jpeg" alt="test image"/>
+		</div>
+		<div id="text-right">And again.</div>
+	</div>
 </body>
