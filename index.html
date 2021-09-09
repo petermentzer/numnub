@@ -6,7 +6,7 @@
 	<title>numnub</title>
 
 	<style>
-		body {margin:0; padding:0; font-family:serif;}
+		body {margin:0; padding:0; font-family:serif;background-color:#fff}
 		img {height: 100%; width: 100%; margin:0; padding:0;
 		}
 		.grid-container {
@@ -20,8 +20,6 @@
 		}
 		.text-left {
 			padding:15%;
-			background-color:#fff;
-			color:#000;
 			margin:0;
 		}
 		.text-right {
@@ -29,6 +27,9 @@
 			/*background-color:#000;
 			color:#fff;*/
 			margin:0;
+		}
+		.text-centered {
+			padding:100px 30% 100px 30%;}
 		}
 		p {line-height: 1.5em;}
 		p.date {
@@ -39,7 +40,7 @@
 		p.main-text:first-letter {
   		float: left;
   		font-size: 60px;
-  		line-height: 45px;
+  		line-height: 35px;
   		padding-top: 4px;
   		padding-right: 8px;
   		padding-left: 3px;
@@ -49,6 +50,8 @@
 </head>
 
 <body id="index" onload="">
+
+	<!-- SECTION 1 -->
 	<div class="grid-container">
 		<div class="text-left">
 			<p class="date">Summer 2021</p>
@@ -59,6 +62,8 @@
 			<img src="img/IMG_5320_bw.jpeg" alt="garden"/>
 		</div>
 	</div>
+
+	<!-- SECTION 2 -->
 	<div class="grid-container">
 		<div class="image-container">
 			<img src="img/IMG_5361_bw.jpeg" alt="garden-2"/>
@@ -69,4 +74,14 @@
 			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
 		</div>
 	</div>
+
+	<!-- SECTION 3 -->
+	<div class="grid-container">
+		<div class="text-centered">
+			<p class="date">Last Thing</p>
+			<p class="main-text">This is a layout template test. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+		</div>
+	</div>
+
 </body>
