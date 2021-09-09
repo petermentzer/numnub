@@ -12,8 +12,6 @@
 			height: 100%;
 			width: 100%;
 			object-fit: cover;
-			margin:0;
-			padding:0;
 		}
 		p {line-height: 1.35em;}
 
@@ -21,21 +19,13 @@
       display: grid;
 		  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
       grid-gap: 0px;
-		  margin:0;padding:0;
 		}
-		.image-container {
-			margin:0;padding:0;
-		}
-		.text-left {
-			padding:15%;
-			margin:0;
-		}
-		.text-right {
-			padding:15%;
-			margin:0;
+		.image-container {}
+		.text-side {
+			padding:12%;
 		}
 		.text-centered {
-			padding:100px 15% 100px 15%;
+			padding:6% 12%;
 		}
 		p.date {
 			font-family:sans-serif;
@@ -46,7 +36,7 @@
   		float: left;
   		font-size: 50px;
   		line-height: 20px;
-  		padding-top: 4px;
+  		padding-top: 6px;
   		padding-right: 8px;
   		padding-left: 3px;
 		}
@@ -58,7 +48,7 @@
 
 	<!-- SECTION 1 -->
 	<div class="grid-container">
-		<div class="text-left">
+		<div class="text-side">
 			<p class="date">Summer 2021</p>
 			<p class="main-text">This is a layout template test. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
@@ -73,7 +63,7 @@
 		<div class="image-container">
 			<img src="img/IMG_5361_bw.jpeg" alt="garden-2"/>
 		</div>
-		<div class="text-right">
+		<div class="text-side">
 			<p class="date">Another Thing</p>
 			<p class="main-text">This is a layout template test. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
