@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="cleartype" content="on">
+	<meta name="MobileOptimized" content="320">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>numnub</title>
 
 	<style>
 
-		body {margin:0; padding:0; font-family:Georgia, serif; font-size:13pt; background-color:#fff}
+		body {
+			margin:0;
+			padding:0;
+			background-color:#fff;
+			font-size: 100%;
+			line-height: 1.4em;
+			font-family: "Calibre Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
 		img {
 			height: 100%;
 			width: 100%;
@@ -16,72 +25,146 @@
 		p {line-height: 1.5em;}
 		.grid-container {
       display: grid;
-		  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+		  /*grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );*/
+			grid-template-columns: 1fr 1fr;
       grid-gap: 0px;
 		}
-		.image-container {}
-		.text-side {
-			padding:12%;
-		}
-		.text-centered {
+		.text {
 			padding:5% 12%;
 		}
-		h2.main-heading {
-			font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
-			font-weight:bold;
-			font-size:24px;
+
+		/* slideout stuff */
+		.slideout-menu {
+		  position: fixed;
+		  top: 0;
+		  bottom: 0;
+		  width: 256px;
+		  min-height: 100vh;
+		  overflow-y: scroll;
+		  -webkit-overflow-scrolling: touch;
+		  z-index: 0;
+		  display: none;
+		}
+		.menu a {
+			text-decoration: none;
+			color:#fff;
+		}
+		.menu-section-list {
+
+		}
+		.slideout-menu-left {
+		  left: 0;
+			background-color: #333;
+			color:#fff;
+		}
+		.slideout-menu-right {
+		  right: 0;
+		}
+		.menu-section-title {
 			text-transform: uppercase;
-			margin-bottom:30px;
+			color: #85888d;
+			font-weight: 200;
+			font-size: 13px;
+			letter-spacing: 1px;
+			padding:10px 20px 0px 20px;
+			margin: 0;
 		}
-		h3.sub-heading {
-			font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
-			font-weight:bold;
-			font-size:21px;
-			text-transform: none;
-			margin-bottom:15px;
+		.menu-section-list {
+			padding: 0px;
+			margin: 10px 0;
+			list-style: none;
+			font-size:13px;
 		}
-		/* Doesn't work yet in most browsers
-		p.main-text:first-letter {
-			initial-letter: 2;
+		ul.menu-section-list a {
+			display:block;
+			padding:10px 20px;
 		}
-		*/
+		.button-logo {
+			background: url('img/pmd-logo-m5a-black.png') no-repeat left center;
+			border:none;
+			position:absolute;
+			outline:none;
+			top:20px;
+			left:20px;
+			overflow:visible;
+			width:50px;
+			height:50px;
+			cursor: pointer;
+		}
+		.slideout-panel {
+		  position: relative;
+		  z-index: 1;
+		  will-change: transform;
+		  background-color: #fff; /* A background-color is required */
+		  min-height: 100vh;
+		}
+		.slideout-open,
+		.slideout-open body,
+		.slideout-open .slideout-panel {
+		  overflow: hidden;
+		}
+		.slideout-open .slideout-menu {
+		  display: block;
+		}
 	</style>
+	<!-- Slideout JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+	<!-- EO slideout js -->
 
 </head>
 
-<body id="index" onload="">
+<body>
+	<nav id="menu" class="menu slideout-menu slideout-menu-left">
+		<h3 class="menu-section-title">Sections</h3>
+			<ul class="menu-section-list">
+				<li><a href="index.html">Solar Aeroponics</a></li>
+				<li><a href="index.html">Experiments</a></li>
+			</ul>
+		</nav>
 
-	<!-- SECTION 1 -->
-	<div class="grid-container">
-		<div class="text-side">
-			<h2 class="main-heading">Summer 2021</h2>
-			<p class="main-text">This is a layout template test. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-		<div class="image-container">
-			<img src="img/IMG_5561.jpeg" alt="garden"/>
-		</div>
-	</div>
+		<main id="panel">
+			<header>
+				<button class="toggle-button button-logo"></button>
+			</header>
 
-	<!-- SECTION 2 -->
-	<div class="grid-container">
-		<div class="image-container">
-			<img src="img/IMG_5324.jpeg" alt="garden-2"/>
-		</div>
-		<div class="text-side">
-			<h3 class="sub-heading">Another Thing</h3>
-			<p class="main-text">This is a layout template test. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-	</div>
+			<!-- SECTION 1 -->
+			<div class="grid-container">
+				<div class="image-container">
+					<img src="img/IMG_5561.jpeg" alt="garden"/>
+				</div>
+				<div class="image-container">
+					<img src="img/IMG_0779.jpeg" alt="garden-2"/>
+				</div>
+			</div>
 
-	<!-- SECTION 3 -->
-	<div class="grid-container">
-		<div class="text-centered">
-			<h3 class="sub-heading">A Last Thing</h3>
-			<p class="main-text">This is a layout template test. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-	</div>
+			<!-- SECTION 2 -->
+			<div class="grid-container">
+				<div class="image-container">
+					<img src="img/IMG_0538.jpeg" alt="garden-2"/>
+				</div>
+				<div class="image-container">
+					<img src="img/IMG_0622.jpeg" alt="garden"/>
+				</div>
+			</div>
+
+		</main>
+
+
+
+	<!--slideout js -->
+    <script>
+      var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70
+      });
+
+      // Toggle button
+      document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+      });
+    </script>
+		<!-- eo slideout js -->
 
 </body>
