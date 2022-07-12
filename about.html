@@ -3,7 +3,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width, initial-scale=1.0">
-<title>numnub</title>
+<title>numnub - about</title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 <link rel=apple-touch-icon-precomposed sizes=152x152 href="apple-touch-icon-152-precomposed.png"/>
 <link rel=apple-touch-icon-precomposed sizes=144x144 href="apple-touch-icon-144-precomposed.png"/>
@@ -131,42 +131,17 @@
 				<button class="toggle-button button-logo"></button>
 			</header>
 
-			<!-- SECTION 1 (2 images) -->
-			<div class="grid-container">
-				<div class="image-container">
-					<picture>
- 						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/embarcadero-800w.jpeg">
- 						<img src="https://pmd-2993.mo.cloudinary.net/embarcadero-400w.jpeg" alt="Embarcadero Morning">
-					</picture>
-				</div>
-				<div class="image-container">
-					<picture>
- 						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/searanch-800w.jpeg">
- 						<img src="https://pmd-2993.mo.cloudinary.net/searanch-400w.jpeg" alt="Sea Ranch">
-					</picture>
-				</div>
-			</div>
-
-			<!-- SECTION 2 (2 images) -->
-			<div class="grid-container">
-				<div class="image-container">
-					<picture>
- 						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/transamerica-800w.jpeg">
- 						<img src="https://pmd-2993.mo.cloudinary.net/transamerica-400w.jpeg" alt="Transamerica">
-					</picture>
-				</div>
-				<div class="image-container">
-					<picture>
- 						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/trees-800w.jpeg">
- 						<img src="https://pmd-2993.mo.cloudinary.net/trees-400w.jpeg" alt="Tree">
-					</picture>
-				</div>
-			</div>
-
 			<!-- SECTION 3 (text area) -->
 			<div class="text-container">
-				<h3 class="subhead">2022</h3>
-				<p class="text">This year I've had to take a break from my solar aeroponics experiments in order to deal with termites and stuff at the house. Next year, my plan is to build out a permanent installation for the solar aeroponics rig in my backyard and continue testing. I took the photos that appear on this page over the past few years as inspirations for the design of the permanent installation. Information about previous iterations is available via the M logo button at top left.</p>
+				<h3 class="subhead">About this site</h3>
+				<p class="text">This site is designed to be primarily image-driven, mobile first, minimalist, use no server side code, and have zero cost to host. Using the pagespeed insights analysis tool, I fiddled with the design until I was able to reliably get speedy scores. The most interesting thing I did during that process was to call different resolution images for mobile vs desktop, and to use a CDN to automatically optimize images and serve them in next generation formats. Here are a few details about how it's wired up.</p>
+				<ol>
+					<li>Pagespeed Insights scores: 89 mobile/98 desktop (results vary)</li>
+					<li>Accessibility: WCAG 2.0 AA</li>
+					<li>Hosting: Github Pages</li>
+					<li>Image CDN: Cloudinary</li>
+					<li>Navigation: Slideout.js</li>
+				</ol>
 			</div>
 
 		</main>
