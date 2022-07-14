@@ -26,15 +26,18 @@
 			width: 100%;
 			object-fit: cover;
 		}
-	  h3 .subhead {/* tbd */}
 		p {line-height: 1.5em;}
-		.text {/* tbd */}
 		.grid-container {
       display: grid;
 		  grid-template-columns: repeat( auto-fit, minmax(375px, 1fr) );
       grid-gap: 0px;
 		}
 	  .text-container { padding:5% 12%; }
+
+		/*Target firefox to display alt text values only after images load*/
+		img:-moz-loading {
+  	visibility: hidden;
+		}
 
 		/* slideout stuff */
 		.slideout-menu {
