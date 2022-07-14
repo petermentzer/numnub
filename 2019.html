@@ -3,7 +3,7 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width, initial-scale=1.0">
-<title>About</title>
+<title>2019</title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 <link rel=apple-touch-icon-precomposed sizes=152x152 href="apple-touch-icon-152-precomposed.png"/>
 <link rel=apple-touch-icon-precomposed sizes=144x144 href="apple-touch-icon-144-precomposed.png"/>
@@ -34,7 +34,7 @@
 		  grid-template-columns: repeat( auto-fit, minmax(375px, 1fr) );
       grid-gap: 0px;
 		}
-	  .text-container { padding:75px 12% 5% 12%; }
+	  .text-container { padding:5% 12%; }
 
 		/* slideout stuff */
 		.slideout-menu {
@@ -135,24 +135,44 @@
 				<button class="toggle-button button-logo"></button>
 			</header>
 
-			<!-- SECTION 3 (text area) -->
-				<div class="text-container">
-					<h3 class="subhead">About this site</h3>
-					<p class="text">This site is designed to be primarily image-driven, mobile-first, minimalist, as lightweight and fast as possible, use no server side code, and have zero cost to host. Using the PageSpeed Insights online analysis tool, I fiddled with the code & design until I was able to reliably get speedy scores. The most interesting thing I did during that process was to call different resolution images for mobile vs desktop, and to use a CDN to automatically optimize images and serve them in next generation formats. Here are a few details about how it's wired up.</p>
-					<ol>
-						<li>PageSpeed Insights scores:</li>
-						<ul>
-							<li>Index page (image-driven design): 89 mobile/98 desktop</li>
-							<li>About page (text only): 100 mobile/100 desktop</li>
-						</ul>
-						<li>Accessibility: WCAG 2.0 AA</li>
-						<li>Hosting: GitHub Pages</li>
-						<li>Image CDN: Cloudinary - Media Optimizer</li>
-						<li>Navigation: Slideout.js</li>
-					</ol>
+			<!-- SECTION 1 (2 images) -->
+			<div class="grid-container">
+				<div class="image-container">
+					<picture>
+ 						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/2019-1-800w.jpeg">
+ 						<img src="https://pmd-2993.mo.cloudinary.net/2019-1-400w.jpeg" alt="2018-1">
+					</picture>
 				</div>
+				<div class="image-container">
+					<picture>
+ 						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/2019-2-800w.jpeg">
+ 						<img src="https://pmd-2993.mo.cloudinary.net/2019-2-400w.jpeg" alt="2018-2">
+					</picture>
+				</div>
+			</div>
 
-		</div><!-- end of sections container -->
+			<!-- SECTION 2 (2 images) -->
+			<div class="grid-container">
+				<div class="image-container">
+					<picture>
+ 						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/2019-3-800w.jpeg">
+ 						<img src="https://pmd-2993.mo.cloudinary.net/2019-3-400w.jpeg" alt="2018-3">
+					</picture>
+				</div>
+				<div class="image-container">
+					<picture>
+ 						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/2019-4-800w.jpeg">
+ 						<img src="https://pmd-2993.mo.cloudinary.net/2019-4-400w.jpeg" alt="2018-4">
+					</picture>
+				</div>
+			</div>
+
+
+			<!-- SECTION 3 (text area) -->
+			<div class="text-container">
+				<h3 class="subhead">2019</h3>
+				<p class="text">This was the year that I dove deep into metrics and automation: Node-RED, Raspberry Pi, Arduino, AWS, IoT, Events. Super fun.</p>
+			</div>
 
 		</main>
 
