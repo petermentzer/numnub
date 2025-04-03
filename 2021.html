@@ -32,8 +32,13 @@
       		display: grid;
 		  	grid-template-columns: repeat( auto-fit, minmax(375px, 1fr) );
       		grid-gap: 0px;
-			max-width:1200px;
-			padding:0 12%;
+		}
+		/* only for non-mobile displays */
+		@media only screen and (min-width: 768px) {
+			.grid-container {
+				max-width:1200px;
+				padding:0 12%;
+			}
 		}
 		a:link, a:visited, a:hover, a:active { text-decoration: none; }
 		.text-container {
