@@ -32,9 +32,14 @@
       		display: grid;
 		  	grid-template-columns: repeat( auto-fit, minmax(375px, 1fr) );
       		grid-gap: 1px;
+			max-width:1200px;
+			padding:0 12%;
 		}
 		a:link, a:visited, a:hover, a:active { text-decoration: none; }
-		.text-container { padding:75px 12% 5% 12%; }
+		.text-container {
+			padding:75px 12% 50px 12%;
+			max-width: 1200px; 
+		}
 		/*Target firefox to display alt text values only after images load*/
 		img:-moz-loading { visibility:hidden; }
 		.footer-container { text-align:center; padding:5%; }
