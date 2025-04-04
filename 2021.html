@@ -31,19 +31,20 @@
 		.image-caption {
 			z-index:3;
 			position:relative;
-			top: 35px;
-			padding:7px;
+			top: 60px;
+			padding:20px;
 			text-align:center;
-			background-color: rgb(255 255 255 / 0.75);
+			background-color: rgb(255 255 255 / 0.85);
   			color: #000;
 		}
 		.grid-container {
       		display: grid;
 		  	grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
       		grid-gap: 0px;
+			margin-top:-60px;
 		}
 		.text-container {
-			padding:75px 20px 10px 20px;
+			padding:75px 20px 10px 22px;
 		}
 		.caption-text {
 			margin:0;
@@ -54,18 +55,18 @@
 		@media only screen and (min-width: 768px) {
 			.text-container {
 				max-width:1440px;
-				padding:75px 15% 10px 15%;
+				padding:75px 15% 0px 15%;
 			}
 			.grid-container {
 				max-width:1440px;
-				/*padding:0 5%;*/
+				margin-top:-45px
 			}
 		}
 		a:link, a:visited, a:hover, a:active { text-decoration: none; }
 		/*Target firefox to display alt text values only after images load*/
 		img:-moz-loading { visibility:hidden; }
 		
-		.footer-container { text-align:center; margin-top:50px; font-size:90%;}
+		.footer-container { text-align:center; margin-top:75px; font-size:90%;}
 		
 		/* slideout stuff */
 		.slideout-menu {
