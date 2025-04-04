@@ -12,106 +12,136 @@
 <link rel=apple-touch-icon-precomposed sizes=72x72 href="apple-touch-icon-72-precomposed.png"/>
 <link rel=apple-touch-icon-precomposed sizes=57x57 href="apple-touch-icon-57-precomposed.png"/>
 <link rel=apple-touch-icon-precomposed href="apple-touch-icon-precomposed.png"/>
-	<style>
-		body {
-			margin:0;
-			padding:0;
-			background-color:#fff;
-			font-size: 100%;
-			line-height: 1.4em;
-			font-family: "Calibre Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+<style>
+	body {
+		margin:0;
+		padding:0;
+		background-color:#fff;
+		font-size: 100%;
+		line-height: 1.4em;
+		font-family: "Calibre Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		color:transparent;
+	}
+	p {line-height: 1.5em;}
+	.image-caption {
+		z-index:3;
+		position:relative;
+		top: 60px;
+		padding:20px;
+		text-align:center;
+		background-color: rgb(255 255 255 / 0.85);
+		  color: #000;
+	}
+	.grid-container {
+		  display: grid;
+		  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+		  grid-gap: 0px;
+		margin-top:-60px;
+	}
+	.text-container {
+		padding:75px 20px 10px 22px;
+	}
+	.caption-text {
+		margin:0;
+		padding:0 10px;
+		font-size:90%;
+	}
+	/* only for non-mobile displays */
+	@media only screen and (min-width: 768px) {
+		.text-container {
+			max-width:1440px;
+			padding:75px 15% 0px 15%;
 		}
-		img {
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
-		}
-	  h3 .subhead {/* tbd */}
-		p {line-height: 1.5em;}
-		.text {/* tbd */}
 		.grid-container {
-      display: grid;
-		  grid-template-columns: repeat( auto-fit, minmax(375px, 1fr) );
-      grid-gap: 0px;
+			max-width:1440px;
+			margin-top:-45px
 		}
-	  .text-container { padding:75px 12% 5% 12%; }
-
-		/* slideout stuff */
-		.slideout-menu {
-		  position: fixed;
-		  top: 0;
-		  bottom: 0;
-		  width: 256px;
-		  min-height: 100vh;
-		  overflow-y: scroll;
-		  -webkit-overflow-scrolling: touch;
-		  z-index: 0;
-		  display: none;
-		}
-		.menu a {
-			text-decoration: none;
-			color:#fff;
-		}
-		.menu-section-list {
-
-		}
-		.slideout-menu-left {
-		  left: 0;
-			background-color: #333;
-			color:#fff;
-		}
-		.slideout-menu-right {
-		  right: 0;
-		}
-		.menu-section-title {
-			text-transform: uppercase;
-			color: #fff;
-			font-weight: 200;
-			font-size: 13px;
-			letter-spacing: 1px;
-			padding:10px 20px 0px 20px;
-			margin: 0;
-			/* purely for automated accessibility testing (already inherited from .slideout-menu-left) */
-				background-color:#333;
-		}
-		.menu-section-list {
-			padding: 0px;
-			margin: 10px 0;
-			list-style: none;
-			font-size:13px;
-		}
-		ul.menu-section-list a {
-			display:block;
-			padding:10px 20px;
-		}
-		.button-logo {
-			background: url('https://pmd-2993.mo.cloudinary.net/pmd-logo-m5a-black.png') no-repeat left center;
-			border:none;
-			position:absolute;
-			outline:none;
-			top:20px;
-			left:20px;
-			overflow:visible;
-			width:50px;
-			height:50px;
-			cursor: pointer;
-		}
-		.slideout-panel {
-		  position: relative;
-		  z-index: 1;
-		  will-change: transform;
-		  background-color: #fff; /* A background-color is required */
-		  min-height: 100vh;
-		}
-		.slideout-open,
-		.slideout-open body,
-		.slideout-open .slideout-panel {
-		  overflow: hidden;
-		}
-		.slideout-open .slideout-menu {
-		  display: block;
-		}
-	</style>
+	}
+	a:link, a:visited, a:hover, a:active { text-decoration: none; }
+	/*Target firefox to display alt text values only after images load*/
+	img:-moz-loading { visibility:hidden; }
+	
+	.footer-container { text-align:center; margin-top:75px; font-size:90%;}
+	
+	/* slideout stuff */
+	.slideout-menu {
+	  position: fixed;
+	  top: 0;
+	  bottom: 0;
+	  width: 256px;
+	  min-height: 100vh;
+	  overflow-y: scroll;
+	  -webkit-overflow-scrolling: touch;
+	  z-index: 0;
+	  display: none;
+	}
+	.menu a {
+		text-decoration: none;
+		color:#fff;
+	}
+	/*.menu-section-list {tbd}*/
+	.slideout-menu-left {
+	  left: 0;
+		background-color: #333;
+		color:#fff;
+	}
+	.slideout-menu-right {
+	  right: 0;
+	}
+	.menu-section-title {
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 200;
+		font-size: 13px;
+		letter-spacing: 1px;
+		padding:10px 20px 0px 20px;
+		margin: 0;
+		/* purely for automated accessibility testing (already inherited from .slideout-menu-left) */
+			background-color:#333;
+	}
+	.menu-section-list {
+		padding: 0px;
+		margin: 10px 0;
+		list-style: none;
+		font-size:13px;
+	}
+	ul.menu-section-list a {
+		display:block;
+		padding:10px 20px;
+	}
+	.button-logo {
+		background: url('https://pmd-2993.mo.cloudinary.net/pmd-logo-m5a-black.png') no-repeat left center;
+		border:none;
+		position:absolute;
+		outline:none;
+		top:20px;
+		left:20px;
+		overflow:visible;
+		width:50px;
+		height:50px;
+		cursor: pointer;
+	}
+	.slideout-panel {
+	  position: relative;
+	  z-index: 1;
+	  will-change: transform;
+	  background-color: #fff; /* A background-color is required */
+	  min-height: 100vh;
+	}
+	.slideout-open,
+	.slideout-open body,
+	.slideout-open .slideout-panel {
+	  overflow: hidden;
+	}
+	.slideout-open .slideout-menu {
+	  display: block;
+	}
+</style>
 	<!-- Start Slideout JS Original - Moving this to inline below ...
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
 	END Slideout JS Original -->
@@ -125,7 +155,7 @@
 				<li><a href="2021.html">2021</a></li>
 				<li><a href="2020.html">2020</a></li>
 				<li><a href="2019.html">2019</a></li>
-        <li><a href="2018.html">2018</a></li>
+        		<li><a href="2018.html">2018</a></li>
 				<li><a href="about.html">About</a></li>
 			</ul>
 		</nav>
@@ -135,7 +165,7 @@
 				<button class="toggle-button button-logo"></button>
 			</header>
 
-			<!-- SECTION 3 (text area) -->
+			<!-- SECTION 1 (text area) -->
 				<div class="text-container">
 					<h3 class="subhead">About this site</h3>
 					<p class="text">This site is designed to be primarily image-driven, mobile-first, minimalist, as lightweight and fast as possible, use no server side code, and have zero cost to host. Using the PageSpeed Insights online analysis tool, I fiddled with the code & design until I was able to reliably get speedy scores. The most interesting thing I did during that process was to call different resolution images for mobile vs desktop, and to use a CDN to automatically optimize images and serve them in next generation formats. Here are a few details about how it's wired up.</p>
@@ -151,10 +181,11 @@
 						<li>Navigation: Slideout.js</li>
 					</ol>
 					<h3 class="subhead">About me</h3>
-					<p class="text">I'm using this site to document my side project, which I've been fiddling with on weekends for the past five years. I have a full time gig of course, which is described here: <a href="https://www.linkedin.com/in/petermentzer">Me on LinkedIn</a>.</p>
+					<p class="text">I'm using this site to document my side project, which I've been fiddling with as time permits since 2018.</p>
 				</div>
 
-		</div><!-- end of sections container -->
+		</div>
+		<!-- end of sections container -->
 
 		</main>
 
