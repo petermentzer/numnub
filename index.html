@@ -12,108 +12,136 @@
 <link rel=apple-touch-icon-precomposed sizes=72x72 href="apple-touch-icon-72-precomposed.png"/>
 <link rel=apple-touch-icon-precomposed sizes=57x57 href="apple-touch-icon-57-precomposed.png"/>
 <link rel=apple-touch-icon-precomposed href="apple-touch-icon-precomposed.png"/>
-	<style>
-		body {
-			margin:0;
-			padding:0;
-			background-color:#fff;
-			font-size: 100%;
-			line-height: 1.4em;
-			font-family: "Calibre Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+<style>
+	body {
+		margin:0;
+		padding:0;
+		background-color:#fff;
+		font-size: 100%;
+		line-height: 1.4em;
+		font-family: "Calibre Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		color:transparent;
+	}
+	p {line-height: 1.5em;}
+	.image-caption {
+		z-index:3;
+		position:relative;
+		top: 60px;
+		padding:20px;
+		text-align:center;
+		background-color: rgb(255 255 255 / 0.85);
+		  color: #000;
+	}
+	.grid-container {
+		  display: grid;
+		  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+		  grid-gap: 0px;
+		margin-top:-60px;
+	}
+	.text-container {
+		padding:75px 20px 10px 22px;
+	}
+	.caption-text {
+		margin:0;
+		padding:0 10px;
+		font-size:90%;
+	}
+	/* only for non-mobile displays */
+	@media only screen and (min-width: 768px) {
+		.text-container {
+			max-width:1440px;
+			padding:75px 15% 0px 15%;
 		}
-		img {
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
-		}
-		p {line-height: 1.5em;}
 		.grid-container {
-      display: grid;
-		  grid-template-columns: repeat( auto-fit, minmax(375px, 1fr) );
-      grid-gap: 0px;
+			max-width:1440px;
+			margin-top:-45px
 		}
-		a:link, a:visited, a:hover, a:active {text-decoration: none;}
-	  .text-container { padding:5% 12%; }
-		/*Target firefox to display alt text values only after images load*/
-		img:-moz-loading {
-  	visibility: hidden;
-		}
-		/* slideout stuff */
-		.slideout-menu {
-		  position: fixed;
-		  top: 0;
-		  bottom: 0;
-		  width: 256px;
-		  min-height: 100vh;
-		  overflow-y: scroll;
-		  -webkit-overflow-scrolling: touch;
-		  z-index: 0;
-		  display: none;
-		}
-		.menu a {
-			text-decoration: none;
-			color:#fff;
-		}
-		.menu-section-list {
-
-		}
-		.slideout-menu-left {
-		  left: 0;
-			background-color: #333;
-			color:#fff;
-		}
-		.slideout-menu-right {
-		  right: 0;
-		}
-		.menu-section-title {
-			text-transform: uppercase;
-			color: #fff;
-			font-weight: 200;
-			font-size: 13px;
-			letter-spacing: 1px;
-			padding:10px 20px 0px 20px;
-			margin: 0;
-			/* purely for automated accessibility testing (already inherited from .slideout-menu-left) */
-				background-color:#333;
-		}
-		.menu-section-list {
-			padding: 0px;
-			margin: 10px 0;
-			list-style: none;
-			font-size:13px;
-		}
-		ul.menu-section-list a {
-			display:block;
-			padding:10px 20px;
-		}
-		.button-logo {
-			background: url('https://pmd-2993.mo.cloudinary.net/pmd-logo-m5a-black.png') no-repeat left center;
-			border:none;
-			position:absolute;
-			outline:none;
-			top:20px;
-			left:20px;
-			overflow:visible;
-			width:50px;
-			height:50px;
-			cursor: pointer;
-		}
-		.slideout-panel {
-		  position: relative;
-		  z-index: 1;
-		  will-change: transform;
-		  background-color: #fff; /* A background-color is required */
-		  min-height: 100vh;
-		}
-		.slideout-open,
-		.slideout-open body,
-		.slideout-open .slideout-panel {
-		  overflow: hidden;
-		}
-		.slideout-open .slideout-menu {
-		  display: block;
-		}
-	</style>
+	}
+	a:link, a:visited, a:hover, a:active { text-decoration: none; }
+	/*Target firefox to display alt text values only after images load*/
+	img:-moz-loading { visibility:hidden; }
+	
+	.footer-container { text-align:center; margin-top:75px; font-size:90%;}
+	
+	/* slideout stuff */
+	.slideout-menu {
+	  position: fixed;
+	  top: 0;
+	  bottom: 0;
+	  width: 256px;
+	  min-height: 100vh;
+	  overflow-y: scroll;
+	  -webkit-overflow-scrolling: touch;
+	  z-index: 0;
+	  display: none;
+	}
+	.menu a {
+		text-decoration: none;
+		color:#fff;
+	}
+	/*.menu-section-list {tbd}*/
+	.slideout-menu-left {
+	  left: 0;
+		background-color: #333;
+		color:#fff;
+	}
+	.slideout-menu-right {
+	  right: 0;
+	}
+	.menu-section-title {
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 200;
+		font-size: 13px;
+		letter-spacing: 1px;
+		padding:10px 20px 0px 20px;
+		margin: 0;
+		/* purely for automated accessibility testing (already inherited from .slideout-menu-left) */
+			background-color:#333;
+	}
+	.menu-section-list {
+		padding: 0px;
+		margin: 10px 0;
+		list-style: none;
+		font-size:13px;
+	}
+	ul.menu-section-list a {
+		display:block;
+		padding:10px 20px;
+	}
+	.button-logo {
+		background: url('https://pmd-2993.mo.cloudinary.net/pmd-logo-m5a-black.png') no-repeat left center;
+		border:none;
+		position:absolute;
+		outline:none;
+		top:20px;
+		left:20px;
+		overflow:visible;
+		width:50px;
+		height:50px;
+		cursor: pointer;
+	}
+	.slideout-panel {
+	  position: relative;
+	  z-index: 1;
+	  will-change: transform;
+	  background-color: #fff; /* A background-color is required */
+	  min-height: 100vh;
+	}
+	.slideout-open,
+	.slideout-open body,
+	.slideout-open .slideout-panel {
+	  overflow: hidden;
+	}
+	.slideout-open .slideout-menu {
+	  display: block;
+	}
+</style>
 	<!-- Start Slideout JS Original - Moving this to inline below ...
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
 	END Slideout JS Original -->
@@ -127,7 +155,7 @@
 				<li><a href="2021.html">2021</a></li>
 				<li><a href="2020.html">2020</a></li>
 				<li><a href="2019.html">2019</a></li>
-        <li><a href="2018.html">2018</a></li>
+        		<li><a href="2018.html">2018</a></li>
 				<li><a href="about.html">About</a></li>
 			</ul>
 		</nav>
@@ -137,15 +165,27 @@
 				<button class="toggle-button button-logo"></button>
 			</header>
 
-			<!-- SECTION 1 (2 images) -->
+			<!-- SECTION 1 (text area) -->
+			<div class="text-container">
+				<h3 class="subhead">2022</h3>
+				<p class="text">This year I've had to take a break from my solar aeroponics experiments in order to deal with termites and stuff at the house. Next year, my plan is to build out a permanent installation for the solar aeroponics rig in my backyard and continue testing. I took the photos that appear on this page over the past few years as inspirations for the design of the permanent installation.</p>
+			</div>
+
+			<!-- SECTION 2 (2 images) -->
 			<div class="grid-container">
 				<div class="image-container">
+					<div class="image-caption">
+						<p class="caption-text">&#9661&nbsp;Embarcadero fog</p>
+					</div>
 					<picture>
  						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/embarcadero-800w.jpeg">
  						<img src="https://pmd-2993.mo.cloudinary.net/embarcadero-400w.jpeg" alt="Embarcadero Morning">
 					</picture>
 				</div>
 				<div class="image-container">
+					<div class="image-caption">
+						<p class="caption-text">&#9661&nbsp;Sea Ranch</p>
+					</div>
 					<picture>
  						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/searanch-800w.jpeg">
  						<img src="https://pmd-2993.mo.cloudinary.net/searanch-400w.jpeg" alt="Sea Ranch">
@@ -153,15 +193,21 @@
 				</div>
 			</div>
 
-			<!-- SECTION 2 (2 images) -->
+			<!-- SECTION 3 (2 images) -->
 			<div class="grid-container">
 				<div class="image-container">
+					<div class="image-caption">
+						<p class="caption-text">&#9661&nbsp;Financial district concrete architecture</p>
+					</div>
 					<picture>
  						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/transamerica-800w.jpeg">
  						<img src="https://pmd-2993.mo.cloudinary.net/transamerica-400w.jpeg" alt="Transamerica">
 					</picture>
 				</div>
 				<div class="image-container">
+					<div class="image-caption">
+						<p class="caption-text">&#9661&nbsp;Mossy copse on Mount Tam</p>
+					</div>
 					<picture>
  						<source media="(min-width:481px)" srcset="https://pmd-2993.mo.cloudinary.net/trees-800w.jpeg">
  						<img src="https://pmd-2993.mo.cloudinary.net/trees-400w.jpeg" alt="Tree">
@@ -169,10 +215,8 @@
 				</div>
 			</div>
 
-			<!-- SECTION 3 (text area) -->
-			<div class="text-container">
-				<h3 class="subhead">2022</h3>
-				<p class="text">This year I've had to take a break from my solar aeroponics experiments in order to deal with termites and stuff at the house. Next year, my plan is to build out a permanent installation for the solar aeroponics rig in my backyard and continue testing. I took the photos that appear on this page over the past few years as inspirations for the design of the permanent installation. Information about previous iterations is available via the M logo button at top left.</p>
+			<!-- Footer -->
+			<div class="footer-container">
 				<p><a href="#top">&#9651;&nbsp;top</a></p>
 			</div>
 
