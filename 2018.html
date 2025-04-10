@@ -38,29 +38,45 @@
 		background-color: rgb(255 255 255 / 0.75);
 		  color: #000;
 	}
-	.grid-container {
-		  display: grid;
-		  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
-		  grid-gap: 1px;
-		margin-top:-60px;
-	}
-	.text-container {
+	.grid-container-text {
+		display: grid;
+		grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+		grid-gap: 1px;
 		padding:75px 20px 10px 22px;
+	}
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+		grid-gap: 1px;
+		margin-top:-60px;
 	}
 	.caption-text {
 		margin:0;
 		padding:0 10px;
 		font-size:90%;
 	}
-	/* only for non-mobile displays */
-	@media only screen and (min-width: 768px) {
-		.text-container {
-			max-width:1000px;
-			padding:75px 15% 0px 15%;
+	/* only for somewhat larger displays */
+	@media only screen and (min-width: 1280px) {
+		.grid-container-text {
+			max-width:1280px;
+			padding:75px 0 0 0;
+			margin-left:auto;
+			margin-right:auto;
 		}
 		.grid-container {
 			max-width:1440px;
-			margin-top:-45px
+			margin-top:-45px;
+		}
+		.text-container {
+			padding-left:5%;
+			padding-right:5%;
+		}
+	}
+	/* only for even larger displays */
+	@media only screen and (min-width: 1441px) {		
+		.grid-container {
+			margin-left:auto;
+			margin-right:auto;
 		}
 	}
 	a:link, a:visited, a:hover, a:active { text-decoration: none; }
@@ -167,9 +183,11 @@
 			</header>
 
 			<!-- SECTION 1 (text area) -->
-			<div class="text-container">
-				<h3 class="subhead">2018</h3>
-				<p class="text">In 2018, I built some prototypes for a potentially innovative new style of rotary atomizer. I read a book called <i>Atomization and Sprays</i> which was fascinating. Unfortunately, it didn't work out (physics, darn). I ended up pivoting to a different design for atomization. But, along the way I made a really cool magnetic coupler that worked flawlessly. Also, I learned a lot about Arduinos, and built a wooden model of a rotary-to-linear translation machine in the medieval style as a study. So it was all good.</p>
+			<div class="grid-container-text">
+				<div class="text-container">
+					<h3 class="subhead">2018</h3>
+					<p class="text">In 2018, I built some prototypes for a potentially innovative new style of rotary atomizer. I read a book called <i>Atomization and Sprays</i> which was fascinating. Unfortunately, it didn't work out (physics, darn). I ended up pivoting to a different design for atomization. But, along the way I made a really cool magnetic coupler that worked flawlessly. Also, I learned a lot about Arduinos, and built a wooden model of a rotary-to-linear translation machine in the medieval style as a study. So it was all good.</p>
+				</div>
 			</div>
 
 			<!-- SECTION 2 (2 images) -->
